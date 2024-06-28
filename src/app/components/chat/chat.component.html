@@ -1,0 +1,27 @@
+<!-- chat.component.html -->
+<div class="chat-container">
+  <h2>Chat en temps réel</h2>
+
+  <div class="chat-messages">
+    <div *ngFor="let message of messages">
+      <p>{{ message }}</p>
+    </div>
+  </div>
+
+  <div class="chat-input">
+    <input type="text" [(ngModel)]="messageText" placeholder="Entrez votre message">
+    <button (click)="sendMessage()">Envoyer</button>
+  </div>
+
+  <div *ngIf="messageSentConfirmation" class="message-sent">
+    {{ messageSentConfirmation }}
+  </div>
+
+
+  <div class="connected-users">
+    <h3>Utilisateurs connectés</h3>
+    <ul>
+      <li *ngFor="let user of connectedUsers">{{ user }}</li>
+    </ul>
+  </div>
+</div>
